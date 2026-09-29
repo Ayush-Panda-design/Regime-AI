@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
+@theme {
+  --color-cream: #F6EFE2;
+  --color-cream-deep: #EDE3D0;
+  --color-paper: #FBF7EF;
+  --color-ink: #1C2B2A;
+  --color-forest: #14453D;
+  --color-monsoon: #2F6F8F;
+  --color-terracotta: #C4552D;
+  --color-saffron: #E2A336;
+  --color-sage: #8FA98B;
+  --color-line: #DCCFB6;
+
+  --color-risk-low: #8FA98B;
+  --color-risk-moderate: #E2A336;
+  --color-risk-high: #C4552D;
+  --color-risk-extreme: #8B1E2D;
+
+  --color-regime-active: #2F6F8F;
+  --color-regime-break: #E2A336;
+  --color-regime-depression: #6B4E8F;
+  --color-regime-coastal: #2A9D8F;
+  --color-regime-orographic: #14453D;
+
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --cream: #F6EFE2;
+  --cream-deep: #EDE3D0;
+  --paper: #FBF7EF;
+  --ink: #1C2B2A;
+  --forest: #14453D;
+  --monsoon: #2F6F8F;
+  --terracotta: #C4552D;
+  --saffron: #E2A336;
+  --sage: #8FA98B;
+  --line: #DCCFB6;
+  --risk-extreme: #8B1E2D;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  background-image: radial-gradient(rgba(28, 43, 42, 0.035) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.weather-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C4B59D;
 }
